@@ -2,6 +2,7 @@
 
 目标是解决生产环境服务质量评估，目前先增加4个核心指标，总请求数，错误请求数，请求延时中位数，平均数，95分布。其它指标可以根据 这些基础指标计算出来
 本程序是抓取pintpoint页面数据，然后分析成指标写入数据库
+
 建表语句：
 CREATE TABLE `application_list` (
   `application_name` varchar(32) NOT NULL,
@@ -25,4 +26,5 @@ CREATE TABLE `time_analysis` (
   `distribution95` int(5) DEFAULT NULL COMMENT '95值',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1005 DEFAULT CHARSET=utf8mb4 COMMENT='数据分析结果存署表';
+
 程序包含两个文件db.py,getscatterdata.py,运行后一个。
